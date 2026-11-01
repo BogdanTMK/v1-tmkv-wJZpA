@@ -1,0 +1,24 @@
+{
+  "name": "l9-card-render",
+  "version": "1.0.0",
+  "description": "* Нельзя менять уже написанный код, тесты и другие файлы добавленные в проект * Выполняйте коммиты и пуши как можно чаще. Так вы будете видеть какие из тестов сработают, а какие нет. * Во время работы не забывайте запускать npm test",
+  "main": "src/index.jsx",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "vite": "vite",
+    "dev": "vite",
+    "server": "vite --config vite.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.62.1",
+    "axios": "^1.19.0",
+    "fastify": "^5.12.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "vite": "^8.2.1"
+  }
+}

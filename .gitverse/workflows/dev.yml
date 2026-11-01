@@ -1,0 +1,33 @@
+name: test-action
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build:
+    runs-on: hexlet-playwright
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup and run tests
+        run: |
+          make install
+          make test
+
+      - name: setup git config
+        run: |
+          git config user.name "Bot"
+          git config user.email "<>"
+
+      - name: Prepare template
+        run: |
+          git checkout --orphan master source
+          > src/UsersTable.jsx
+          > src/SortUsers.jsx
+          git add -A
+          git commit --no-verify -m "Rebuild template (auto)"
+          git push -f --no-verify --set-upstream origin master
